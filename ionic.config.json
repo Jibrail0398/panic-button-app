@@ -1,0 +1,7 @@
+{
+  "name": "panic-button-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
