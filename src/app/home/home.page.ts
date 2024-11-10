@@ -22,6 +22,11 @@ export class HomePage {
     this.longitude = coordinates.coords.longitude
     console.log('Current position:', coordinates);
   }
+
+  playAlarm(){
+    const alarm = new Audio("../../assets/audio/alarm.mp3")
+    alarm.play()
+  }
   
   
 }
