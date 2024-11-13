@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.panic-button',
+  appId: 'io.panicButton.starter',
   appName: 'panic-button-app',
   webDir: 'www'
 };
