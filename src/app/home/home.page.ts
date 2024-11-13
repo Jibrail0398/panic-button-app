@@ -27,6 +27,8 @@ export class HomePage {
     const alarm = new Audio("../../assets/audio/alarm.mp3")
     alarm.play()
   }
-  
+
+
+
   
 }
