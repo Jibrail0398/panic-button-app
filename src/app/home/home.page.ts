@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Geolocation } from '@capacitor/geolocation';
-
+import { environment } from 'src/environments/environment';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 
 @Component({
@@ -11,8 +12,10 @@ import { Geolocation } from '@capacitor/geolocation';
 
 export class HomePage {
   
-  constructor() {}
-  
+  constructor(private db: AngularFireDatabase){}
+
+
+
   latitude:number = 0;
   longitude:number = 0;
 
@@ -21,14 +24,13 @@ export class HomePage {
     this.latitude = coordinates.coords.latitude
     this.longitude = coordinates.coords.longitude
     console.log('Current position:', coordinates);
+    console.log(environment.firebaseConfig.apiKey)
   }
 
   playAlarm(){
     const alarm = new Audio("../../assets/audio/alarm.mp3")
     alarm.play()
   }
-
-
 
   
 }
