@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Geolocation } from '@capacitor/geolocation';
 import { FirebaseServiceService } from '../service/firebase-service.service';
 import { HttpClient } from '@angular/common/http';
-import { switchMap } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 
 @Component({
@@ -21,51 +22,37 @@ export class HomePage {
   
   ngOnInit() {
     
-     
-
-    //Buat Referensi Database ke ke trydata
-    const dbRef = this.firebase.initDatabaseRef("trydata")
-    let prevData:string="";
-
-    //Nyalakan alarm jika ada data berubah, pada code ini tidak menggunakan isDatabaseChanged()
+    //Nyalakan alarm jika ada penambahan data, pada code ini tidak menggunakan isDatabaseChanged()
     let count = 0
-    this.firebase.getDatabaseOnRef(dbRef).subscribe(
+    const myUserId = environment.userId
+    this.firebase.detectAddChanges("FireAccident").subscribe(
       (data)=>{
-        if (count > 0) {
-         this.playAlarm();
-         console.log("data berubah menjadi:",data)
-        }
-        else{
-          console.log("data belum berubah")
+        //Kondisi agar ketika aplikasi pertama dibuka, alarm tidak nyala
+        if (count>0){
+          if(myUserId !== data.userId){
+
+            this.latitude = data.latitude;
+            this.longitude = data.longitude;
+            this.userId = data.userId;
+            console.log(data)
+            this.playAlarm()
+          }
         }
         count+=1
       }
-    ) 
-
+    )
    
-    
-    
   }
 
-
-  // prevData:string="";
-  
-
+    
   latitude:number = 0;
   longitude:number = 0;
+  userId:string='';
 
   items: any[] = [];
   newItem: any = {
     nama: ''
   };
-
-  getMyLocation = async () =>{
-    let coordinates = await Geolocation.getCurrentPosition();
-    this.latitude = coordinates.coords.latitude
-    this.longitude = coordinates.coords.longitude
-    
-  }
-
 
   playAlarm(){
     const alarm = new Audio("../../assets/audio/alarm.mp3")
@@ -81,6 +68,15 @@ export class HomePage {
       }
       console.log(this.data)
     });
+  }
+
+  async panicButton(){
+
+    //langsung insert data koordinat
+    let coordinates = await Geolocation.getCurrentPosition();
+    const latitudewillsend = coordinates.coords.latitude
+    const longitudewillsend = coordinates.coords.longitude
+    this.firebase.insertDatabaseOnRef("FireAccident",latitudewillsend,longitudewillsend)
   }
   
 }

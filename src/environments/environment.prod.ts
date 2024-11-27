@@ -8,8 +8,19 @@ const firebaseConfig = {
   appId: "1:447258507352:web:46549677f9bef2caffb22d",
   measurementId: "G-DGWXF2M8P9"
 };
+function generateRandomString(length = 5) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters[randomIndex];
+  }
+  return result;
+}
+const myUserId = generateRandomString();
 
 export const environment = {
   production: true,
-  firebaseConfig :firebaseConfig
+  firebaseConfig :firebaseConfig,
+  userId:myUserId
 };
