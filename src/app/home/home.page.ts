@@ -2,8 +2,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Geolocation, PositionOptions } from '@capacitor/geolocation';
 import { FirebaseServiceService } from '../service/firebase-service.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { switchMap } from 'rxjs';
 import axios from 'axios';
+
 
 @Component({
   selector: 'app-home',
@@ -12,31 +14,46 @@ import axios from 'axios';
 })
 export class HomePage {
   constructor(
-    private firebase: FirebaseServiceService,
-    private http: HttpClient
+
+    private firebase:FirebaseServiceService,
+    private http:HttpClient,
+ 
   ) {}
-
+  
   ngOnInit() {
-    //Buat Referensi Database ke ke trydata
-    const dbRef = this.firebase.initDatabaseRef('trydata');
-    let prevData: string = '';
+    
+    //Nyalakan alarm jika ada penambahan data, pada code ini tidak menggunakan isDatabaseChanged()
+    
+    const myUserId = environment.userId
+    this.firebase.detectAddChanges("FireAccident").subscribe(
+      (data)=>{
 
-    //Nyalakan alarm jika ada data berubah, pada code ini tidak menggunakan isDatabaseChanged()
-    let count = 0;
-    this.firebase.getDatabaseOnRef(dbRef).subscribe((data) => {
-      if (count > 0) {
-        this.playAlarm();
-        console.log('data berubah menjadi:', data);
-      } else {
-        console.log('data belum berubah');
+        //Kondisi agar ketika aplikasi pertama dibuka, alarm tidak nyala
+        if (this.count === 0){
+          setTimeout(()=>{
+            this.count+=1
+          },10)
+          return
+        }
+        console.log("data ditambah")
+        console.log("ini nilai count",this.count)
+        if (this.count>0){
+          if(myUserId !== data.id){
+            
+            this.latitude = data.latitude;
+            this.longitude = data.longitude;
+            this.userId = data.id;
+            console.log("Alarm Menyala")
+            this.playAlarm()
+          }
+        }
       }
-      count += 1;
-    });
-
-    this.startTrackingPosition();
+    )
+   this.startTrackingPosition();
   }
 
-  // prevData:string="";
+  count = 0
+  userId:string='';
 
   latitude: number = 0;
   longitude: number = 0;
@@ -54,6 +71,22 @@ export class HomePage {
     nama: '',
   };
 
+
+  playAlarm(){
+    const alarm = new Audio("../../assets/audio/alarm.mp3")
+    const play = alarm.play()
+  }
+
+ 
+  async panicButton(){
+    //langsung insert data koordinat
+    let coordinates = await Geolocation.getCurrentPosition();
+    const latitudewillsend = coordinates.coords.latitude
+    const longitudewillsend = coordinates.coords.longitude
+    this.firebase.insertDatabaseOnRef("FireAccident",latitudewillsend,longitudewillsend)
+  }
+
+
   async checkPermissions() {
     const hasPermission = await Geolocation.checkPermissions();
     if (hasPermission.location === 'denied') {
@@ -70,21 +103,6 @@ export class HomePage {
   playAlarm() {
     const alarm = new Audio('../../assets/audio/alarm.mp3');
     const play = alarm.play();
-  }
-
-  data: any;
-
-  getData() {
-    this.http
-      .get(
-        'https://panic-button-database-default-rtdb.asia-southeast1.firebasedatabase.app/trydata.json'
-      )
-      .subscribe((response) => {
-        if (response) {
-          this.data = response;
-        }
-        console.log(this.data);
-      });
   }
 
   async startTrackingPosition() {
@@ -140,4 +158,5 @@ export class HomePage {
       console.error('Error fetching geocoding:', error);
     }
   }
+
 }

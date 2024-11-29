@@ -13,10 +13,23 @@ const firebaseConfig = {
   measurementId: "G-DGWXF2M8P9"
 };
 
+function generateRandomString(length = 5) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters[randomIndex];
+  }
+  return result;
+}
+const myUserId = generateRandomString();
+
 export const environment = {
   production: true,
-  firebaseConfig :firebaseConfig
+  firebaseConfig :firebaseConfig,
+  userId:myUserId
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
