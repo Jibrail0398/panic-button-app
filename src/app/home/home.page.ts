@@ -100,10 +100,6 @@ export class HomePage {
     // this.longitude = coordinates.coords.longitude;
   };
 
-  playAlarm() {
-    const alarm = new Audio('../../assets/audio/alarm.mp3');
-    const play = alarm.play();
-  }
 
   async startTrackingPosition() {
     const options: PositionOptions = {
