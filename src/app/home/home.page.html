@@ -14,16 +14,24 @@
   </ion-header>
 
   <div id="container">
-    
-    
 
-    
-    <p *ngIf = "latitude != 0" >{{ latitude }}</p>
-    <p *ngIf = "longitude != 0" >{{ longitude }}</p>
-    <p *ngIf = "userId != ''" >{{ userId }}</p>
+
+    <ion-button (click)="getMyLocation()" >Check My Location</ion-button>
+
+
+    <p *ngIf = "latitude != 0" >Latitude: {{ latitude }}</p>
+    <p *ngIf = "longitude != 0" >Longitude: {{ longitude }}</p>
+    <p *ngIf = "flag != ''" >Bendera: {{ flag }}</p>
+    <p *ngIf = "continent != ''" >Benua: {{ continent }}</p>
+    <p *ngIf = "country != ''" >Negara: {{ country }}</p>
+    <p *ngIf = "country_code != ''" >Kode Negara: {{ country_code }}</p>
+    <p *ngIf = "state != ''" >Provinsi: {{ state }}</p>
+    <p *ngIf = "town != ''" >Kota: {{ town }}</p>
+    <p *ngIf = "village != ''" >Desa: {{ village }}</p>
+
 
     <ion-button (click)="panicButton()" >Panic Button</ion-button>
   </div>
 
-  
+
 </ion-content>
