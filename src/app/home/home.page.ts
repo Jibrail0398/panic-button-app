@@ -3,7 +3,7 @@ import { Geolocation, PositionOptions } from '@capacitor/geolocation';
 import { FirebaseServiceService } from '../service/firebase-service.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { switchMap } from 'rxjs';
+
 import axios from 'axios';
 
 
@@ -40,8 +40,8 @@ export class HomePage {
         if (this.count>0){
           if(myUserId !== data.id){
             
-            this.latitude = data.latitude;
-            this.longitude = data.longitude;
+            this.latitudereceived = data.latitude;
+            this.longitudereceived = data.longitude;
             this.userId = data.id;
             console.log("Alarm Menyala")
             this.playAlarm()
@@ -51,6 +51,10 @@ export class HomePage {
     )
    this.startTrackingPosition();
   }
+
+ 
+  latitudereceived:number = 0
+  longitudereceived:number = 0
 
   count = 0
   userId:string='';

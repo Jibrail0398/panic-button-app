@@ -37,7 +37,7 @@ export class FirebaseServiceService {
     )
     })
 
-  }
+  }//
 
   //format tanggal indonesia
   indonesianFormatDate(date: Date) {
