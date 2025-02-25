@@ -54,11 +54,11 @@ export class FirebaseServiceService {
   }
 
   //insert ke database realtime
-  insertDatabaseOnRef(path:string,long:number,lat:number){
+  async insertDatabaseOnRef(path:string,long:number,lat:number){
 
     const dbRef = this.initDatabaseRef(path);
     const date = new Date()
-    push(dbRef,{
+    await push(dbRef,{
       id:environment.userId,
       longitude:long,
       latitude:lat,

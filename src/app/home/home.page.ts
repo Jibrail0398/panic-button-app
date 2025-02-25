@@ -49,7 +49,7 @@ export class HomePage {
         }
       }
     )
-   this.startTrackingPosition();
+  //  this.startTrackingPosition();
   }
 
  
@@ -87,7 +87,8 @@ export class HomePage {
     let coordinates = await Geolocation.getCurrentPosition();
     const latitudewillsend = coordinates.coords.latitude
     const longitudewillsend = coordinates.coords.longitude
-    this.firebase.insertDatabaseOnRef("FireAccident",latitudewillsend,longitudewillsend)
+    this.firebase.insertDatabaseOnRef("FireAccident",latitudewillsend,longitudewillsend);
+    
   }
 
 
