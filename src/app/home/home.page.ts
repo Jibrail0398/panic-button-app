@@ -49,7 +49,7 @@ export class HomePage {
         }
       }
     )
-  //  this.startTrackingPosition();
+  
   }
 
  
@@ -99,11 +99,6 @@ export class HomePage {
     }
   }
 
-  getMyLocation = async () => {
-    // let coordinates = await Geolocation.getCurrentPosition();
-    // this.latitude = coordinates.coords.latitude;
-    // this.longitude = coordinates.coords.longitude;
-  };
 
 
   async startTrackingPosition() {
