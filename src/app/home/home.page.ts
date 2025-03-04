@@ -3,7 +3,7 @@ import { Geolocation, PositionOptions } from '@capacitor/geolocation';
 import { FirebaseServiceService } from '../service/firebase-service.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { switchMap } from 'rxjs';
+
 import axios from 'axios';
 
 
@@ -40,8 +40,8 @@ export class HomePage {
         if (this.count>0){
           if(myUserId !== data.id){
             
-            this.latitude = data.latitude;
-            this.longitude = data.longitude;
+            this.latitudereceived = data.latitude;
+            this.longitudereceived = data.longitude;
             this.userId = data.id;
             console.log("Alarm Menyala")
             this.playAlarm()
@@ -49,8 +49,12 @@ export class HomePage {
         }
       }
     )
-   this.startTrackingPosition();
+  
   }
+
+ 
+  latitudereceived:number = 0
+  longitudereceived:number = 0
 
   count = 0
   userId:string='';
@@ -83,7 +87,8 @@ export class HomePage {
     let coordinates = await Geolocation.getCurrentPosition();
     const latitudewillsend = coordinates.coords.latitude
     const longitudewillsend = coordinates.coords.longitude
-    this.firebase.insertDatabaseOnRef("FireAccident",latitudewillsend,longitudewillsend)
+    this.firebase.insertDatabaseOnRef("FireAccident",latitudewillsend,longitudewillsend);
+    
   }
 
 
@@ -94,16 +99,7 @@ export class HomePage {
     }
   }
 
-  getMyLocation = async () => {
-    // let coordinates = await Geolocation.getCurrentPosition();
-    // this.latitude = coordinates.coords.latitude;
-    // this.longitude = coordinates.coords.longitude;
-  };
 
-  playAlarm() {
-    const alarm = new Audio('../../assets/audio/alarm.mp3');
-    const play = alarm.play();
-  }
 
   async startTrackingPosition() {
     const options: PositionOptions = {
