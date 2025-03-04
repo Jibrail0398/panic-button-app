@@ -24,7 +24,6 @@ export class FirebaseServiceService {
   }
 
 
-
   //Ambil data di Referensi Database tertentu
   getDatabaseOnRef(dbRef:DatabaseReference):Observable<any>{
     return new Observable((observer)=>{
@@ -38,17 +37,34 @@ export class FirebaseServiceService {
     )
     })
 
+  }//
+
+  //format tanggal indonesia
+  indonesianFormatDate(date: Date) {
+    
+    const options: Intl.DateTimeFormatOptions = {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    };
+    return date.toLocaleDateString('id-ID', options);
   }
 
-  insertDatabaseOnRef(path:string,long:number,lat:number){
+  //insert ke database realtime
+  async insertDatabaseOnRef(path:string,long:number,lat:number){
+
     const dbRef = this.initDatabaseRef(path);
-    push(dbRef,{
-      userId:environment.userId,
+    const date = new Date()
+    await push(dbRef,{
+      id:environment.userId,
       longitude:long,
-      latitude:lat
+      latitude:lat,
+      tanggal:this.indonesianFormatDate(date)
     })
   }
-
 
   detectAddChanges(path:string):Observable<any>{
     const dbRef = this.initDatabaseRef(path);
