@@ -19,16 +19,8 @@ export class GuardService implements CanActivate {
 
     if(!token){
 
-      const alert = await this.alertctrl.create({
-        header:"Silahkan login terlebih dahulu",
-        buttons:["OK"],
-      });
-      await alert.present()
-      await alert.onDidDismiss().then(()=>{
-
-        this.router.navigate(['/login'])
-      });
       
+      this.router.navigate(['/login'])
       return false
     }
 
