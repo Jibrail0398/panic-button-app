@@ -12,4 +12,10 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  handphone:string = "";
+
+  sendOTP(){
+    console.log(this.handphone)
+  }
+
 }
