@@ -1,0 +1,32 @@
+
+
+<ion-content [fullscreen]="true">
+  
+
+  <div class="text-center mt-16 mb-8" >
+    
+    <img src="" height="200" alt="Login Picture">
+  </div>
+  
+  <p class="text-2xl text-center instrument-sans-normal-500" >Masukan Nomor Handphone Anda</p>
+
+  <p class="instrument-sans-normal-400 text-center text-sm  mt-4 mb-6" >Kami akan mengirimkan OTP ke nomor anda</p>
+
+  <div class="bg-input-text w-3/4 mx-auto flex items-center mb-10 rounded-xl ">
+
+    <!-- nanti iconnya diganti dari BE -->
+    <svg class="w-5 h-5 ml-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 16.5l4.5 4.5m-9-3a7.5 7.5 0 1 0-3 0 7.5 7.5 0 0 0 3 0z" />
+    </svg>
+
+    <input class="bg-transparent rounded-xl w-full border-none placeholder:font-[abhaya-libre-normal-600] focus:ring-0"  type="text" [(ngModel)]="handphone" placeholder="Nomor Handphone">  
+
+  </div>
+
+  <p class="text-center mb-4 text-sm instrument-sans-normal-400" >Belum punya akun?
+    <span class="text-reddamkar" >Register disini</span>
+  </p>
+
+  <button class="bg-reddamkar p-4 w-3/4 rounded-3xl block mx-auto" (click)="sendOTP()" >Kirim OTP</button>
+
+</ion-content>
