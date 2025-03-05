@@ -25,7 +25,11 @@ const routes: Routes = [
     path: 'otp',
     loadChildren: () => import('./authentication/otp/otp.module').then( m => m.OtpPageModule),
     
+  },  {
+    path: 'panic-button',
+    loadChildren: () => import('./pages/panic-button/panic-button.module').then( m => m.PanicButtonPageModule)
   },
+
 ];
 
 @NgModule({
