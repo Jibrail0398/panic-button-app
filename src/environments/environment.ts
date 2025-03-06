@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 const apiKey = "Bearer JnrVVP9ueZgfgZe3woYwEpFW0maCL8CZZVmYlxiO45lk6rn9hXBsqszbQuOgfyGk"
 
+
 function generateRandomString(length = 5) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
@@ -29,7 +30,8 @@ const myUserId = generateRandomString();
 export const environment = {
   production: true,
   firebaseConfig :firebaseConfig,
-  userId:myUserId
+  userId:myUserId,
+  apiKey:apiKey
 };
 
 
