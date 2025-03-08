@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterPage implements OnInit {
 
   constructor(
-    
+    private route:Router
   ) { }
 
   ngOnInit() {
@@ -96,7 +96,7 @@ export class RegisterPage implements OnInit {
     }
     
     
-    const url:string = 'http://127.0.0.1:8000/api/user/auth/register';
+    const url:string = `${environment.url}/api/user/auth/register`;
     
     try{
       const response = await fetch(url,{
@@ -108,10 +108,9 @@ export class RegisterPage implements OnInit {
         }
       })
       const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.message || 'Request failed');
-      }
-      console.log(data)
+      
+      localStorage.setItem("handphone",dataSend.phone_number)
+      this.route.navigate(["/otp"])
       
     }catch(e){
       console.error(e)
