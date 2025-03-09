@@ -17,6 +17,7 @@ export class OtpPage implements OnInit {
 
   async ngOnInit() {
     await this.storage.create();
+    console.log(await this.storage.get("token"))
   }
 
   handphone = localStorage.getItem("handphone")
