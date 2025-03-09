@@ -1,4 +1,4 @@
-import { Component, OnInit,ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class OtpPage implements OnInit {
 
   constructor(
-    private route:Router
+    
   ) { }
 
   ngOnInit() {
@@ -32,7 +32,10 @@ export class OtpPage implements OnInit {
     // Pastikan input hanya berisi satu digit
     if (inputValue && inputValue.length > 0) {
       // Batasi input ke satu karakter
-      input.value = inputValue.slice(0, 1);
+      if (inputValue.length > 1) {
+        input.value = inputValue.slice(-1);
+        
+      }
       
       // Jika nextInput tidak null, pindahkan fokus ke input berikutnya
       if (nextInput) {
@@ -46,8 +49,12 @@ export class OtpPage implements OnInit {
   
   async verifyOTP(){
 
+   
     const url = environment.url+"/api/user/auth/login";
-    const allDigit = `${this.digit1Value}${this.digit2Value}${this.digit3Value}${this.digit4Value}${this.digit5Value}${this.digit6Value}`;
+    const allDigit = `${this.digit1Value.toString().slice(-1)}${this.digit2Value.toString().slice(-1)}${this.digit3Value.toString().slice(-1)}${this.digit4Value.toString().slice(-1)}${this.digit5Value.toString().slice(-1)}${this.digit6Value.toString().slice(-1)}`;
+
+    console.log(allDigit)    
+    
 
     try{
       const response = await fetch(url,{
@@ -68,6 +75,29 @@ export class OtpPage implements OnInit {
       
     }catch(e){
       console.log(e)
+    }
+  }
+
+  async resend(){
+    const url = environment.url+"/api/user/otp/send"
+    try{
+      const response = await fetch(url,{
+        method:"POST",
+        body:JSON.stringify({
+          phone_number:this.handphone
+        }),
+        headers:{
+          "Content-type":"application/json",
+          "X-API-KEY":environment.apiKey,
+        }
+      });
+      const data = await response.json();
+      
+      console.log(data);
+      
+    }
+    catch(e){
+      console.error(e)
     }
   }
 
