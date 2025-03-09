@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 
   constructor(
-    private route:Router
+    private route:Router,
+    private alertctrl:AlertController
   ) { }
 
   ngOnInit() {
@@ -22,8 +24,15 @@ export class LoginPage implements OnInit {
     if(this.handphone.startsWith("08")){
       this.handphone = "628"+this.handphone.slice(2)
     }
+  
+    const url = environment.url+"/api/user/otp/sen"
+
     
-    const url = environment.url+"/api/user/otp/send"
+    const alert = await this.alertctrl.create({
+      header:"berhasil dikirim",
+      buttons:['ok']
+    })
+
     try{
       const response = await fetch(url,{
         method:"POST",
@@ -36,11 +45,19 @@ export class LoginPage implements OnInit {
         }
       });
       const data = await response.json();
+
+      await alert.present()
+
       localStorage.setItem("handphone",this.handphone)
       console.log(data);
       this.route.navigate(['/otp']);
     }
     catch(e){
+      const alert = await this.alertctrl.create({
+        header:"gagal dikirim",
+        buttons:['ok']
+      })
+      await alert.present()
       console.error(e)
     }
   }
