@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +11,12 @@ import { Router } from '@angular/router';
 export class OtpPage implements OnInit {
 
   constructor(
-    
+    private storage:Storage ,
+    private router:Router
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.storage.create();
   }
 
   handphone = localStorage.getItem("handphone")
@@ -70,8 +73,9 @@ export class OtpPage implements OnInit {
       });
   
       const data = await response.json()
+      await this.storage.set("token",data.token)
+      this.router.navigate(['/home'])
       console.log(data)
-      console.log(allDigit)
       
     }catch(e){
       console.log(e)
@@ -92,7 +96,6 @@ export class OtpPage implements OnInit {
         }
       });
       const data = await response.json();
-      
       console.log(data);
       
     }
