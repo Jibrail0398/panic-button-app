@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-otp',
@@ -12,7 +13,8 @@ export class OtpPage implements OnInit {
 
   constructor(
     private storage:Storage ,
-    private router:Router
+    private router:Router,
+    private alertctrl:AlertController
   ) { }
 
   async ngOnInit() {

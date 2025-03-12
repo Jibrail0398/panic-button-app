@@ -25,13 +25,7 @@ export class LoginPage implements OnInit {
       this.handphone = "628"+this.handphone.slice(2)
     }
   
-    const url = environment.url+"/api/user/otp/sen"
-
-    
-    const alert = await this.alertctrl.create({
-      header:"berhasil dikirim",
-      buttons:['ok']
-    })
+    const url = environment.url+"/api/user/otp/send"
 
     try{
       const response = await fetch(url,{
@@ -44,13 +38,25 @@ export class LoginPage implements OnInit {
           "X-API-KEY":environment.apiKey,
         }
       });
+
+      if(response.ok){
+
+        const alert = await this.alertctrl.create({
+          header:"berhasil dikirim",
+          buttons:['ok']
+        })
+        await alert.present()
+        localStorage.setItem("handphone",this.handphone)
+        this.route.navigate(['/otp']);
+      }
       const data = await response.json();
-
+      
+      const alert = await this.alertctrl.create({
+        header:"gagal dikirim",
+        message:data.message,
+        buttons:['ok']
+      })
       await alert.present()
-
-      localStorage.setItem("handphone",this.handphone)
-      console.log(data);
-      this.route.navigate(['/otp']);
     }
     catch(e){
       const alert = await this.alertctrl.create({
