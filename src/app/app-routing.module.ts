@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'panic-button',
     loadChildren: () => import('./pages/panic-button/panic-button.module').then( m => m.PanicButtonPageModule)
   },
+  {
+    path: 'offline-mode',
+    loadChildren: () => import('./pages/offline-mode/offline-mode.module').then( m => m.OfflineModePageModule)
+  },
 
 ];
 
