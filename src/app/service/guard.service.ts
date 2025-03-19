@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate,Router,ActivatedRouteSnapshot } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { IonicstorageService } from './ionicstorage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,18 +8,18 @@ import { AlertController } from '@ionic/angular';
 export class GuardService implements CanActivate {
 
   constructor(
-    private alertctrl:AlertController,
+    
+    private storage:IonicstorageService,
     private router:Router
   ) { }
 
   async canActivate(route:ActivatedRouteSnapshot): Promise<boolean>{
 
-    let token = localStorage.getItem('token')
-
+    let token = await this.storage.get("token")
+    console.log(token)
 
     if(!token){
-
-      
+      console.log("Token tidak ditemukan, mengarahkan ke halaman login");
       this.router.navigate(['/login'])
       return false
     }

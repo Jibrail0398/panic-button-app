@@ -1,72 +1,132 @@
 <ion-content [fullscreen]="true">
+  <div class="p-6">
+    <div class="flex justify-center mb-6">
+      <img 
+        alt="Illustration of a person interacting with a mobile phone screen" 
+        class="w-64 h-64 object-cover md:w-96 md:h-92"  
+        src="../../../assets/image/authentication.jpg" />
+    </div>
+    
+    <h2 class="text-2xl text-center instrument-sans-normal-500">Masukkan Nomor Handphone Anda</h2>
+    <p class="instrument-sans-normal-400 text-center text-sm  mt-4 mb-6">Kami akan mengirimkan OTP ke nomor Handphone Anda</p>
 
- 
-   <div class="flex justify-center mb-6">
-    <img alt="Illustration of a person interacting with a mobile phone screen" class="w-64 h-64" height="200" src="https://storage.googleapis.com/a1aa/image/0LhEPRMMHo_aCfRvOLiUImOz3l9lr4Zo7UDDL-ZpURw.jpg" width="300"/>
-   </div>
-   <h2 class="text-2xl font-bold text-center mb-2">
-    Masukan nomor Handphone anda
-   </h2>
-   <p class="text-center text-gray-500 mb-6">
-    kami akan mengirimkan OTP ke nomor Handphone anda
-   </p>
-   <form>
-    <div class="mb-4">
-     <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Full Name" type="text"/>
-    </div>
-    <div class="mb-4">
-     <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="No Handphone" type="text"/>
-    </div>
-    <div class="mb-4">
-     <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Tanggal Lahir" type="text"/>
-    </div>
-    <div class="mb-4 relative">
-     <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 appearance-none">
-      <option>
-       Gender
-      </option>
-      <option>
-       Male
-      </option>
-      <option>
-       Female
-      </option>
-     </select>
-     <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-      <i class="fas fa-chevron-down text-gray-500">
-      </i>
-     </div>
-    </div>
-    <div class="mb-4">
-     <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Provinsi" type="text"/>
-     <div class="flex items-center mt-2">
-     </div>
-    </div>
-    <div class="mb-6">
-     <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Kabupaten" type="text"/>
-     <input class="form-checkbox text-red-500" type="checkbox"/>
-      <span class="ml-2 text-sm text-gray-500">
-       Apakah alamat ktp beda dengan domisili
-      </span>
-    </div>
-    <div class="mb-6">
-      <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Domisili" type="text"/>
-     </div>
-    <div class="text-center mb-6">
-     <span class="text-gray-500">
-      Sudah punya akun?
-      <a class="text-red-500" href="#">
-       Login Disini
-      </a>
-     </span>
-    </div>
-    <div class="flex justify-center">
-      <button class="w-3/4 py-3 bg-reddamkar text-white rounded-lg font-semibold hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" type="submit">
-        Kirim OTP
-      </button>
-    </div>
-   </form>
+    <form class="w-full">
 
+      <!-- nama -->
+      <div class="bg-input-text w-full mx-auto flex items-center mb-10 rounded-x">
+        <input class="bg-transparent rounded-xl w-full border-none placeholder:font-[abhaya-libre-normal-600] focus:ring-0" placeholder="Nama Lengkap" type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" />
+      </div>
 
+      <!-- no Handphone  -->
+      <div class="bg-input-text w-full mx-auto flex items-center mb-10 rounded-x">
+        <input class="bg-transparent rounded-xl w-full border-none placeholder:font-[abhaya-libre-normal-600] focus:ring-0" placeholder="No Handphone" type="tel"
+        [(ngModel)] = "handphone" [ngModelOptions]="{standalone:true}"
+        />
+      </div>
+      
+      <!-- tanggal lahir  -->
+      <div class="bg-input-text w-full mx-auto flex items-center mb-10 rounded-x">
+        <input class="bg-transparent rounded-xl w-full border-none placeholder:font-[abhaya-libre-normal-600]  focus:ring-0"  placeholder="Tanggal Lahir" type="date"
+        [(ngModel)]="dateBirth"  [ngModelOptions]="{standalone:true}"
+        />
+      </div>
+
+      <!-- gender  -->
+      <div class="mb-2 relative">
+        <div class="bg-input-text w-full mx-auto flex items-center mb-10 rounded-x" >
+          <select 
+            class="bg-transparent abhaya-libre-normal-600 rounded-xl w-full border-none text-gray-500 focus:ring-0"
+            [(ngModel)]="gender" [ngModelOptions]="{standalone:true}"
+            >
+            <option value="" disabled selected hidden>Gender</option>
+            <option value="male" >Laki-laki</option>
+            <option value="female" >Perempuan</option>
+          </select>
+
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+          <i class="fas fa-chevron-down text-gray-500"></i>
+        </div>
+      </div>
+
+      
+
+      <label class="abhaya-libre-normal text-sm mb-4" >Alamat KTP</label>
+
+      <!-- Provinsi KTP  -->
+      <div class="bg-input-text w-full mx-auto flex items-center mb-4 rounded-x">
+        <select 
+          class="bg-transparent abhaya-libre-normal-600 rounded-xl w-full border-none text-gray-500 focus:ring-0" 
+          [(ngModel)]="provinceKTP" [ngModelOptions]="{standalone:true}"
+          (change)="onChangeProvince(false)"
+          >
+          <option [ngValue]="null" disabled selected hidden>Provinsi</option>
+          <option *ngFor="let data of provinceData" [ngValue]="data" >{{ data.name }}</option>
+        </select>
+        
+      </div>
+       
+      <!-- Kabupaten KTP  -->
+      <div class="bg-input-text w-full mx-auto flex items-center mb-4 rounded-x">
+        <select 
+          class="bg-transparent abhaya-libre-normal-600 rounded-xl w-full border-none text-gray-500 focus:ring-0" 
+          [(ngModel)]="kabupatenKTP" [ngModelOptions]="{standalone:true}"
+
+          >
+          <option [ngValue]="null" disabled selected hidden>Kabupaten</option>
+          <option *ngFor="let data of kabupatenData" [ngValue]="data" >{{ data.name }}</option>
+        </select>
+      </div>
+
+      <div class="mb-4 flex items-center">
+        <input [ngModel]="isSameWithKTP" [ngModelOptions]="{standalone:true}" class="form-checkbox text-red-500" type="checkbox" (change)="isSame()" />
+        <span class="ml-2 text-sm text-gray-500">Apakah alamat KTP sama dengan domisili?</span>
+      </div>
+
+      
+      
+      <!-- Domicile  -->
+      
+      <div *ngIf="isSameWithKTP === false" >
+        <label class="abhaya-libre-normal text-sm mb-4 " >Alamat Domisili</label>
+         <div class="bg-input-text w-full mx-auto flex items-center mb-4 rounded-x">
+           <select 
+             class="bg-transparent abhaya-libre-normal-600 rounded-xl w-full border-none text-gray-500 focus:ring-0" 
+             [(ngModel)]="provinceDomicile" [ngModelOptions]="{standalone:true}"
+             (change)="onChangeProvince(true)"
+             >
+             <option [ngValue]="null" disabled selected hidden>Provinsi</option>
+             <option *ngFor="let data of provinceData" [ngValue]="data" >{{ data.name }}</option>
+           </select>
+         </div>
+         <div class="bg-input-text w-full mx-auto flex items-center mb-4 rounded-x">
+           <select 
+             class="bg-transparent abhaya-libre-normal-600 rounded-xl w-full border-none text-gray-500 focus:ring-0" 
+             [(ngModel)]="kabupatenDomicile" [ngModelOptions]="{standalone:true}"
+   
+             >
+             <option [ngValue]="null" disabled selected hidden>Kabupaten</option>
+             <option *ngFor="let data of kabupatenDataDomicile" [ngValue]="data" >{{ data.name }}</option>
+           </select>
+         </div>
+       </div>
+
+      <div class="mb-6 block ">
+        <span class="text-gray-500">
+          Sudah punya akun? 
+          <a class="text-reddamkar  hover:underline" routerLink="/login" >Login Disini</a>
+        </span>
+      </div>
+      
+      <div>
+        <button 
+          class="w-full py-3 bg-reddamkar text-white rounded-lg font-semibold hover:bg-red-600 focus:ring-2 focus:ring-red-500 focus:outline-none" 
+          type="submit" (click)="onregis()" >
+          Kirim OTP
+        </button>
+      </div>
+    </form>
+
+  </div>
 </ion-content>
 

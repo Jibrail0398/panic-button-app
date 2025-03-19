@@ -13,7 +13,19 @@ const firebaseConfig = {
   measurementId: "G-DGWXF2M8P9"
 };
 
+const firebaseMessaging = {
+  apiKey: "AIzaSyByqoUJkiOnFsTLxoaq0JHAMpEwCm3bqEA",
+  authDomain: "cloud-messaging-damkar.firebaseapp.com",
+  projectId: "cloud-messaging-damkar",
+  storageBucket: "cloud-messaging-damkar.firebasestorage.app",
+  messagingSenderId: "873746291386",
+  appId: "1:873746291386:web:797391e722633117c64083",
+  measurementId: "G-F9R2GE3V8B"
+}
+
 const apiKey = "Bearer JnrVVP9ueZgfgZe3woYwEpFW0maCL8CZZVmYlxiO45lk6rn9hXBsqszbQuOgfyGk"
+
+const url = "http://127.0.0.1:8000"
 
 function generateRandomString(length = 5) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -29,7 +41,10 @@ const myUserId = generateRandomString();
 export const environment = {
   production: true,
   firebaseConfig :firebaseConfig,
-  userId:myUserId
+  userId:myUserId,
+  firebaseMessaging:firebaseMessaging,
+  apiKey:apiKey,
+  url:url
 };
 
 

@@ -9,23 +9,28 @@
 
   
   <p class="text-center text" >Verifikasi OTP</p>
-  <p class="text-center">masukkan nomor otp yang dikirimkan ke +62</p>
+  <p class="text-center">masukkan nomor otp yang dikirimkan ke +{{ handphone }}</p>
   <div class="flex justify-center space-x-2 mb-4">
-    <input class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" maxlength="1" type="text"/>
-    <input class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" maxlength="1" type="text"/>
-    <input class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" maxlength="1" type="text"/>
-    <input class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" maxlength="1" type="text"/>
-    <input class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" maxlength="1" type="text"/>
-    <input class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" maxlength="1" type="text"/>
+    <input #digit1 (input)="moveToNext(digit2,$event)" [(ngModel)]="digit1Value" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" type="number"/>
+    
+    <input #digit2 (input)="moveToNext(digit3,$event)" [(ngModel)]="digit2Value" class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" type="number"/>
+
+    <input #digit3 (input)="moveToNext(digit4,$event)" [(ngModel)]="digit3Value" class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" type="number"/>
+
+    <input #digit4 (input)="moveToNext(digit5,$event)" [(ngModel)]="digit4Value" class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" type="number"/>
+
+    <input #digit5 (input)="moveToNext(digit6,$event)" [(ngModel)]="digit5Value" class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" type="number"/>
+
+    <input #digit6 (input)="moveToNext(null,$event)" [(ngModel)]="digit6Value" class="w-12 h-12 text-center border border-gray-300 rounded shadow-sm" type="number"/>
   </div>
    <p class="text-center text-gray-600 mb-6">
     Belum menerima pesan OTP?
-    <a class="text-red-500" href="#">
+    <span (click)="resend()" class="text-red-500" >
      Kirim Ulang
-    </a>
+    </span>
    </p>
   <div class="flex justify-center">
-  <button class="w-3/4 py-3 bg-reddamkar text-white rounded-full text-lg font-semibold"> Sign in</button>
+  <button (click)="verifyOTP()" class="w-3/4 py-3 bg-reddamkar text-white rounded-full text-lg font-semibold"> Sign in</button>
   </div>
 
 
