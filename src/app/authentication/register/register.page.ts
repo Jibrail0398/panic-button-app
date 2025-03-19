@@ -47,7 +47,7 @@ export class RegisterPage implements OnInit {
       this.provinceDomicile = this.provinceKTP;
       this.kabupatenDomicile = this.kabupatenKTP;
       this.isSameWithKTP = !this.isSameWithKTP;
-      console.log(this.provinceDomicile?.name + ","+this.provinceKTP?.name)
+      
     }else{
       this.isSameWithKTP = !this.isSameWithKTP;
       this.provinceDomicile = null;
@@ -107,13 +107,16 @@ export class RegisterPage implements OnInit {
           "X-API-KEY":environment.apiKey,
         }
       })
+      console.log(environment.apiKey)
       const data = await response.json();
       
-      localStorage.setItem("handphone",dataSend.phone_number)
-      this.route.navigate(["/otp"])
+      if(response.ok){
+        localStorage.setItem("handphone",dataSend.phone_number)
+        this.route.navigate(["/otp"])
+      }
       
     }catch(e){
-      console.error(e)
+      console.log(e)
     }
 
 

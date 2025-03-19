@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-otp',
   templateUrl: './otp.page.html',
@@ -86,6 +87,7 @@ export class OtpPage implements OnInit {
   }
 
   async resend(){
+    console.log(environment.apiKey)
     const url = environment.url+"/api/user/otp/send"
     try{
       const response = await fetch(url,{
@@ -98,8 +100,16 @@ export class OtpPage implements OnInit {
           "X-API-KEY":environment.apiKey,
         }
       });
-      const data = await response.json();
-      console.log(data);
+      if(response.ok){
+        const data = await response.json();
+        const alert = await this.alertctrl.create({
+          header:"berhasil dikirim",
+          message:data.otp,
+          buttons:['ok']
+        });
+        await alert.present();
+      }
+      
       
     }
     catch(e){
