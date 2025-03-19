@@ -24,7 +24,6 @@ const firebaseMessaging = {
 }
 
 const apiKey = "Bearer JnrVVP9ueZgfgZe3woYwEpFW0maCL8CZZVmYlxiO45lk6rn9hXBsqszbQuOgfyGk"
-
 const url = "http://127.0.0.1:8000"
 
 function generateRandomString(length = 5) {

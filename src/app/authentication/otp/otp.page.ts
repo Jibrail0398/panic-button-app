@@ -100,16 +100,15 @@ export class OtpPage implements OnInit {
           "X-API-KEY":environment.apiKey,
         }
       });
+      const data = await response.json();
       if(response.ok){
-        const data = await response.json();
         const alert = await this.alertctrl.create({
-          header:"berhasil dikirim",
+          header:"Send OTP Success",
           message:data.otp,
           buttons:['ok']
         });
         await alert.present();
       }
-      
       
     }
     catch(e){

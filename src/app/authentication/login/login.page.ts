@@ -40,7 +40,6 @@ export class LoginPage implements OnInit {
       });
 
       const data = await response.json();
-
       if(response.ok){
 
         const alert = await this.alertctrl.create({
@@ -52,7 +51,8 @@ export class LoginPage implements OnInit {
         localStorage.setItem("handphone",this.handphone)
         this.route.navigate(['/otp']);
       }
-    
+      
+      
     }
     catch(e){
       const alert = await this.alertctrl.create({
