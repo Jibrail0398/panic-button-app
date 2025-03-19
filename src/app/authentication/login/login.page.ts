@@ -39,24 +39,20 @@ export class LoginPage implements OnInit {
         }
       });
 
+      const data = await response.json();
       if(response.ok){
 
         const alert = await this.alertctrl.create({
           header:"berhasil dikirim",
+          message:data.otp,
           buttons:['ok']
         })
         await alert.present()
         localStorage.setItem("handphone",this.handphone)
         this.route.navigate(['/otp']);
       }
-      const data = await response.json();
       
-      const alert = await this.alertctrl.create({
-        header:"gagal dikirim",
-        message:data.message,
-        buttons:['ok']
-      })
-      await alert.present()
+      
     }
     catch(e){
       const alert = await this.alertctrl.create({
