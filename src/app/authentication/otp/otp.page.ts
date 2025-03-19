@@ -99,7 +99,14 @@ export class OtpPage implements OnInit {
         }
       });
       const data = await response.json();
-      console.log(data);
+      if(response.ok){
+        const alert = await this.alertctrl.create({
+          header:"Send OTP Success",
+          message:data.otp,
+          buttons:['ok']
+        });
+        await alert.present();
+      }
       
     }
     catch(e){
