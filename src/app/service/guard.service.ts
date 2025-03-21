@@ -16,7 +16,7 @@ export class GuardService implements CanActivate {
   async canActivate(route:ActivatedRouteSnapshot): Promise<boolean>{
 
     let token = await this.storage.get("token")
-    console.log(token)
+    
 
     if(!token){
       console.log("Token tidak ditemukan, mengarahkan ke halaman login");

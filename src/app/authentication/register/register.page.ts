@@ -16,7 +16,7 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
     this.getProvince()
-    
+    localStorage.setItem("currentRoute",this.route.url)
   }
 
   //semua properti input
