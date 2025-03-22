@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Geolocation, PositionOptions } from '@capacitor/geolocation';
-import { FirebaseServiceService } from '../service/firebase-service.service';
+import { FirebaseServiceService } from '../service/firebase/firebase-service.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
