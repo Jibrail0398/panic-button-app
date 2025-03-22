@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate,Router,ActivatedRouteSnapshot } from '@angular/router';
-import { IonicstorageService } from '../ionicstorage.service';
+import { IonicstorageService } from '../storage/ionicstorage.service';
 
 @Injectable({
   providedIn: 'root'
