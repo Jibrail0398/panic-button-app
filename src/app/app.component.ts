@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NetworkService } from 'src/app/service/network.service';
+import { NetworkService } from 'src/app/service/network/network.service';
 
 @Component({
   selector: 'app-root',
