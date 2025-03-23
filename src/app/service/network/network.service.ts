@@ -17,11 +17,7 @@ export class NetworkService {
   
   
   async listenNetworkChanges(){
-    
-    
-    // const networkStatus = await Network.getStatus();
-    // this.checkNetworkStatus(networkStatus.connected);
-    
+        
     Network.addListener('networkStatusChange',Status=>{
       let currentRoute:any= localStorage.getItem("currentRoute")
       
