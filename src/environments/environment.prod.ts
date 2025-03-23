@@ -21,7 +21,7 @@ const firebaseMessaging = {
 
 const apiKey = "Bearer JnrVVP9ueZgfgZe3woYwEpFW0maCL8CZZVmYlxiO45lk6rn9hXBsqszbQuOgfyGk"
 
-const url = "http://192.168.1.6"
+const url = "https://8e95-103-47-133-190.ngrok-free.app"
 
 function generateRandomString(length = 5) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
