@@ -14,8 +14,8 @@ export class CameraService {
       const video = await Camera.getPhoto({
         source: CameraSource.Camera,
         resultType: CameraResultType.Uri,
-        
       });
+
       const videoPath = video.path || video.webPath;
       return videoPath;
     } catch (error) {

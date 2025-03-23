@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CameraService } from 'src/app/service/camera/camera.service';
 
 @Component({
   selector: 'app-panic-button',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanicButtonPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private camera:CameraService 
+  ) { }
 
   ngOnInit() {
+  }
+
+  async recordVideo(){
+    const videoPath = await this.camera.recordVideo();
   }
 
 }
