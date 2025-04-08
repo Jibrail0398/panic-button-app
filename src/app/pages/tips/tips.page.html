@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="text-center">Tips</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-0">
+  <div class="relative text-center mb-8">
+    <!-- <img src="assets/tips-keselamatan.png" alt="Tips Keselamatan" class="w-full h-auto"> -->
+    <h2 class="absolute top-1/4 left-1/2 transform -translate-x-1/2 text-dark text-2xl font-bold">Tips Keselamatan</h2>
+  </div>
+
+  <div class="flex flex-wrap gap-2 p-3">
+    <ion-button color="danger" shape="round" size="small" class="text-xs">Semua</ion-button>
+    <ion-button color="light" shape="round" size="small" class="text-xs">Pencegahan Kebakaran</ion-button>
+    <ion-button color="light" shape="round" size="small" class="text-xs">Penanganan Darurat</ion-button>
+  </div>
+
+  <div class="p-2">
+    <ion-card class="rounded-lg overflow-hidden mb-3">
+      <img src="assets/image/apare.jpg" alt="Pemasangan Detektor Asap" class="w-full">
+      <ion-card-content class="p-4">
+        <div class="font-bold text-lg mb-1">Pemasangan Detektor Asap</div>
+        <div class="text-sm text-gray-600">
+          Pastikan setiap ruangan memiliki detektor asap yang berfungsi dengan baik. Periksa baterai secara rutin setiap 6 bulan sekali.
+        </div>
+        <ion-buttons slot="end" class="mt-2 justify-end">
+          <ion-button>
+            <ion-icon name="bookmark-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="rounded-lg overflow-hidden mb-3">
+      <img src="assets/apar.png" alt="Cara menggunakan APAR" class="w-full">
+      <ion-card-content class="p-4">
+        <div class="font-bold text-lg mb-1">Cara menggunakan APAR</div>
+        <div class="text-sm text-gray-600">
+          Tutorial lengkap penggunaan alat pemadam api ringan untuk pemula.
+        </div>
+        <ion-buttons slot="end" class="mt-2 justify-end">
+          <ion-button>
+            <ion-icon name="bookmark-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

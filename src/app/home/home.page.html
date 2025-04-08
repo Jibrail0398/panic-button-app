@@ -1,37 +1,118 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-
-
-    <ion-button (click)="startTrackingPosition()" >Check My Location</ion-button>
-
-
-    <p *ngIf = "latitude != 0" >Latitude: {{ latitude }}</p>
-    <p *ngIf = "longitude != 0" >Longitude: {{ longitude }}</p>
-    <p *ngIf = "flag != ''" >Bendera: {{ flag }}</p>
-    <p *ngIf = "continent != ''" >Benua: {{ continent }}</p>
-    <p *ngIf = "country != ''" >Negara: {{ country }}</p>
-    <p *ngIf = "country_code != ''" >Kode Negara: {{ country_code }}</p>
-    <p *ngIf = "state != ''" >Provinsi: {{ state }}</p>
-    <p *ngIf = "town != ''" >Kota: {{ town }}</p>
-    <p *ngIf = "village != ''" >Desa: {{ village }}</p>
-
-
-    <ion-button (click)="panicButton()" >Panic Button</ion-button>
-  </div>
-
-
+    <div class="h-screen w-full relative">
+      <div class="h-2/5 w-full bg-reddamkar text-white p-6">
+        <div>
+          <h2 class="public-sans-bold-400 text-lg mb-2">Selamat siang, John Doe</h2>
+          <p class="text-sm flex items-center gap-1 public-sans-reguler-400">
+            <ion-icon name="location" class="text-[25px]"></ion-icon>
+            Cikampek, Karawang, West Java, Indonesia
+          </p>
+        </div>        
+        <div class="flex items-center justify-between mt-4">
+          <div class="flex items-center gap-2">
+            <ion-icon name="cloud-outline"></ion-icon>
+            <span>30°C Mostly cloudy</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute top-32 left-1/2 transform -translate-x-1/2 w-11/12 bg-white shadow-lg rounded-lg p-4 grid grid-cols-3 gap-4 text-center">
+        <div class="p-2 flex flex-col items-center">
+            <div class="bg-[#FFE6E6] w-12 h-12 flex items-center justify-center rounded-md">
+                <ion-icon name="flame" class="text-red-500 text-3xl"></ion-icon>
+            </div>
+            <span class="public-sans-reguler-400 text-sm mt-1">Panic Button</span>
+        </div>
+    
+        <div class="p-2 flex flex-col items-center">
+            <div class="bg-[#FFE6E6] w-12 h-12 flex items-center justify-center rounded-md">
+                <ion-icon name="call" class="text-red-500 text-3xl"></ion-icon>
+            </div>
+            <span class="public-sans-reguler-400 text-sm mt-1">Contact</span>
+        </div>
+    
+        <div class="p-2 flex flex-col items-center">
+            <div class="bg-[#FFE6E6] w-12 h-12 flex items-center justify-center rounded-md">
+                <ion-icon name="bulb" class="text-red-500 text-3xl"></ion-icon>
+            </div>
+            <span class="public-sans-reguler-400 text-sm mt-1">Tips</span>
+        </div>
+    
+        <div class="p-2 flex flex-col items-center">
+            <div class="bg-[#FFE6E6] w-12 h-12 flex items-center justify-center rounded-md">
+              <ion-icon name="medical" class="text-red-500 text-3xl"></ion-icon>
+            </div>
+            <span class="public-sans-reguler-400 text-sm mt-1">Other Emergency</span>
+        </div>
+    
+        <div class="p-2 flex flex-col items-center">
+            <div class="bg-[#FFE6E6] w-12 h-12 flex items-center justify-center rounded-md">
+                <ion-icon name="business" class="text-red-500 text-3xl"></ion-icon>
+            </div>
+            <span class="public-sans-reguler-400 text-sm mt-1">Kunjungan ke Makodamkar</span>
+        </div>
+    
+        <div class="p-2 flex flex-col items-center">
+            <div class="bg-[#FFE6E6] w-12 h-12 flex items-center justify-center rounded-md">
+                <ion-icon name="book" class="text-red-500 text-3xl"></ion-icon>
+            </div>
+            <span class="public-sans-reguler-400 text-sm mt-1">Permohonan Pelatihan</span>
+        </div>
+      </div>
+      
+      <div class="mt-40 mx-auto bg-white shadow-lg rounded-lg w-11/12">
+        <div class="bg-reddamkar text-white font-bold p-3 rounded-t-lg flex items-center justify-between px-4">
+          <span class="public-sans-bold-400">Kebakaran</span>
+          <span class="public-sans-bold-400">Detail</span>
+        </div>
+        <div class="p-4 text-black">
+          <p class="public-sans-reguler-400 text-sm flex items-center gap-3">
+            <ion-icon name="time-outline" class="text-2xl"></ion-icon>
+            10 November 2024, 14:35
+          </p>
+          <p class="public-sans-reguler-400 text-sm flex items-center gap-3 mt-2">
+            <ion-icon name="location-outline" class="text-2xl"></ion-icon>
+            Jl. Sudirman No. 45, Jakarta
+          </p>
+          <div class="mt-2 flex items-center gap-3 public-sans-reguler-400">
+            <ion-icon name="checkmark-circle-outline" class="text-2xl"></ion-icon>
+            Laporan diterima
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-4 mx-auto bg-white shadow-lg rounded-lg w-11/12 p-4">
+        <div class="flex mb-2">
+            <img src="assets/image/fire.jpg" alt="kebakaran" class="w-32 h-32 object-cover rounded-lg mr-4">
+            <div>
+                <h3 class="public-sans-bold-400 text-lg">Kebakaran di gudang kopra</h3>
+                <p class="public-sans-reguler-400 text-sm">Kebakaran terjadi di gudang kopra yang berlokasi di Jl. Kenjeran No 335, Kelurahan Gading, Kecamatan Tambaksari, Surabaya, pada Selasa (1/4) siang. Kebakaran ini melibatkan mesin cerobong kopra dan diduga dipicu oleh aktivitas pengelasan.
+                  Petugas menerima laporan insiden ini pada pukul 11.59 WIB. Tak lama setelah laporan diterima, enam unit pemadam kebakaran langsung diberangkatkan ke lokasi.
+                  Selain itu dua unit dari Rayon 2 Tambakrejo, dua unit dari Rayon 1 Pasar Turi, satu unit dari Pos Mulyorejo, serta satu unit rescue. Selain itu, satu unit tangki air dari DLH turut dikerahkan.</p>
+                <div class="flex items-center text-sm mt-1 public-sans-reguler-400">
+                    <ion-icon name="time-outline" class="text-lg mr-2"></ion-icon>
+                    <span>10 November 2024, 14:35</span>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+    </div>
+    
+    <div class="fixed bottom-0 w-full bg-white shadow-lg py-2 flex justify-around text-black-700 border-t">
+      <div class="flex flex-col items-center">
+        <ion-icon name="home" class="text-black text-2xl"></ion-icon>
+        <span class="text-xs">Home</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <ion-icon name="briefcase" class="text-black text-2xl"></ion-icon>
+        <span class="text-xs">Kasus</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <ion-icon name="time" class="text-black text-2xl"></ion-icon>
+        <span class="text-xs">History</span>
+      </div>
+    </div>
+  
 </ion-content>
+  

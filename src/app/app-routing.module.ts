@@ -29,6 +29,22 @@ const routes: Routes = [
     path: 'panic-button',
     loadChildren: () => import('./pages/panic-button/panic-button.module').then( m => m.PanicButtonPageModule)
   },
+  {
+    path: 'message',
+    loadChildren: () => import('./pages/message/message.module').then( m => m.MessagePageModule)
+  },
+  {
+    path: 'call',
+    loadChildren: () => import('./pages/call/call.module').then( m => m.CallPageModule)
+  },
+  {
+    path: 'detail-panic-button',
+    loadChildren: () => import('./pages/detail-panic-button/detail-panic-button.module').then( m => m.DetailPanicButtonPageModule)
+  },
+  {
+    path: 'tips',
+    loadChildren: () => import('./pages/tips/tips.module').then( m => m.TipsPageModule)
+  },
 
 ];
 

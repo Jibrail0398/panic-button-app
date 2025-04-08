@@ -1,0 +1,147 @@
+
+  <ion-toolbar class="bg-white text-black">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" class="text-reddamkar"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="roboto-reguler text-center text-reddamkar">Detail</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="text-black">
+        <ion-icon slot="icon-only" name="ellipsis-vertical" class="text-reddamkar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+<ion-content [fullscreen]="true">
+  <div class="w-full">
+    <!-- <iframe
+      width="100%"
+      height="300"
+      frameborder="0"
+      class="shadow-lg"
+      style="border:0"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin=-6.308865,107.305439&destination=-6.290123,107.319456&mode=driving"
+      allowfullscreen>
+    </iframe> -->
+
+    <iframe
+      width="100%"
+      height="300"
+      frameborder="0"
+      class="shadow-lg"
+      style="border:0"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?saddr=-6.308865,107.305439&daddr=-6.290123,107.319456&output=embed"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- <div class="bg-white py-2">
+    <div class="flex items-start px-4 py-3">
+      <div class="w-12 h-12 flex items-center justify-center bg-reddamkar text-white rounded-full flex-shrink-0">
+        <ion-icon name="location" class="text-2xl"></ion-icon>
+      </div>
+      <div class="ml-4">
+        <h2 class="text-lg font-bold">Kantor Damkar Karawang</h2>
+        <p class="text-sm text-gray-600">
+          Jl. Husni Hamid No.28, Nagasari, Kec. Karawang Barat, Karawang
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start px-4 py-3 border-t border-gray-200">
+      <div class="w-12 h-12 flex items-center justify-center bg-reddamkar text-white rounded-full flex-shrink-0">
+        <ion-icon name="home" class="text-2xl"></ion-icon>
+      </div>
+      <div class="ml-4">
+        <h2 class="text-lg font-bold">My Location</h2>
+        <p class="text-sm text-gray-600">
+          Jl. HS.Ronggo Waluyo, Puseurjaya, Telukjambe Timur, Karawang, Jawa Barat 41361
+        </p>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 mt-2"></div>
+    <div class="p-4">
+      <div class="font-bold text-lg mb-2">Kantor Damkar</div>
+      <div class="flex space-x-2">
+        <ion-button color="light" class="flex-1 h-10 rounded-full">
+          <ion-icon name="chatbubble" slot="start"></ion-icon>
+        </ion-button>
+        <ion-button color="light" class="flex-1 h-10 rounded-full">
+          <ion-icon name="call" slot="start"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 mt-2"></div>
+    <div class="flex justify-between px-4 py-3">
+      <div>
+        <div class="text-gray-500">Estimasi waktu</div>
+        <div class="font-bold text-lg">5 menit</div>
+      </div>
+      <div class="text-right">
+        <div class="text-gray-500">Status</div>
+        <div class="text-reddamkar font-bold">Dalam Perjalanan</div>
+      </div>
+    </div>
+  </div> -->
+
+   <div class="bg-white py-2 px-4">
+    <div class="relative flex items-start py-3">
+      <div class="w-12 h-12 flex items-center justify-center bg-reddamkar text-white rounded-full flex-shrink-0 z-10">
+        <ion-icon name="location" class="text-2xl"></ion-icon>
+      </div>
+      <div class="ml-4">
+        <h2 class="roboto-bold text-lg">Kantor Damkar Karawang</h2>
+        <p class="roboto-regular text-sm text-gray-600">Jl. Husni Hamid No.28, Nagasari, Kec. Karawang Barat, Karawang</p>
+      </div>
+      <div class="absolute left-6 top-12 w-0.5 h-[60px] border-l-2 border-dashed border-gray-400"></div>
+    </div>
+
+    <div class="relative flex items-start py-3">
+      <div class="w-12 h-12 flex items-center justify-center bg-reddamkar text-white rounded-full flex-shrink-0 z-10">
+        <ion-icon name="home" class="text-2xl"></ion-icon>
+      </div>
+      <div class="ml-4">
+        <h2 class="roboto-bold text-lg">My Location</h2>
+        <p class="roboto-regular text-sm text-gray-600">Jl. HS.Ronggo Waluyo, Puseurjaya, Telukjambe Timur, Karawang, Jawa Barat 41361</p>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 mt-2"></div>
+    <div class="p-4">
+      <div class="flex items-center">
+       <div class="w-12 h-12 flex items-center justify-center bg-reddamkar text-white rounded-full flex-shrink-0">
+         <img src="assets/image/profile.jpg" alt="Kantor Damkar" class="w-full h-full object-cover rounded-full">
+        </div>
+        <div class="ml-4">
+          <div class="roboto-bold text-lg mb-2">Kantor Damkar</div>
+        </div>
+      </div>
+  
+      <div class="flex space-x-2 mt-4">
+        <ion-button color="light" class="flex-1 h-10 rounded-full">
+          <ion-icon name="chatbubble" slot="start"></ion-icon>
+        </ion-button>
+        <ion-button color="light" class="flex-1 h-10 rounded-full">
+           <ion-icon name="call" slot="start"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 mt-2"></div>
+    <div class="flex justify-between px-4 py-3">
+      <div>
+        <div class="roboto-reguler text-gray-500">Estimasi waktu</div>
+        <div class="roboto-bold text-lg">5 menit</div>
+      </div>
+      <div class="text-right">
+        <div class="roboto-reguler text-gray-500">Status</div>
+        <div class="roboto-bold text-reddamkar">Dalam Perjalanan</div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

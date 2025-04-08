@@ -1,0 +1,95 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="sanchez-regular" size="large" color="dark">Call (2)</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div class="p-4">
+    <div class="relative">
+      <ion-icon name="search-outline" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></ion-icon>
+      <input type="text" placeholder="cari" class="w-full pl-10 p-2 border rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300">
+    </div>
+  </div>
+  
+  <div>
+    <div class="flex items-center justify-between p-3">
+      <div class="flex items-center space-x-3">
+        <!-- <ion-avatar class="w-12 h-12">
+          <img src="assets/image/profile.jpg" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
+        </ion-avatar> -->
+        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+         <div class="">
+        <p class="sanchez-regular text-xl">Nama Petugas (2)</p>
+        <p class="flex items-center gap-2 text-gray-600 text-sm"> 
+          <ion-icon name="arrow-redo-circle" class="text-green-500 text-sm"></ion-icon>
+          <span class="sanchez-regular">Baru saja</span>
+        </p>
+        </div>
+      </div>
+        <ion-button fill="clear" class="text-gray-950 text-l">
+         <ion-icon name="call-outline"></ion-icon>
+        </ion-button>
+    </div>
+
+    <div class="flex items-center justify-between p-3">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+         <div class="">
+        <p class="sanchez-regular text-xl">Nama Petugas</p>
+        <p class="flex items-center gap-2 text-gray-600 text-sm"> 
+          <ion-icon name="arrow-undo-circle" class="text-green-500 text-sm"></ion-icon>
+          <span class="sanchez-regular">20 November 2024, 12:15</span>
+        </p>
+        </div>
+      </div>
+        <ion-button fill="clear" class="text-gray-950 text-l">
+         <ion-icon name="videocam-outline"></ion-icon>
+        </ion-button>
+    </div>
+    
+    <div class="flex items-center justify-between p-3">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+         <div class="">
+        <p class="sanchez-regular text-xl">Nama Petugas</p>
+        <p class="flex items-center gap-2 text-gray-600 text-sm"> 
+          <ion-icon name="arrow-undo-circle" class="text-red-500 text-sm"></ion-icon>
+          <span class="sanchez-regular">20 November 2024, 12:15</span>
+        </p>
+        </div>
+      </div>
+        <ion-button fill="clear" class="text-gray-950 text-l">
+         <ion-icon name="videocam-outline"></ion-icon>
+        </ion-button>
+    </div>
+
+    <div class="flex items-center justify-between p-3">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+         <div class="">
+        <p class="sanchez-regular text-xl">Nama Petugas</p>
+        <p class="flex items-center gap-2 text-gray-600 text-sm"> 
+          <ion-icon name="arrow-redo-circle" class="text-red-500 text-sm"></ion-icon>
+          <span class="sanchez-regular">20 November 2024, 12:15</span>
+        </p>
+        </div>
+      </div>
+        <ion-button fill="clear" class="text-gray-950 text-l">
+         <ion-icon name="videocam-outline"></ion-icon>
+        </ion-button>
+    </div>
+  </div>
+  
+  <div class="fixed bottom-0 w-full bg-white shadow-md flex justify-around p-3">
+    <ion-icon name="chatbubble" class="text-gray-500 text-2xl"></ion-icon>
+    <ion-icon name="call" class="text-gray-500 text-2xl"></ion-icon>
+  </div>
+
+</ion-content>

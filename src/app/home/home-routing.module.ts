@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-    canActivate:[GuardService]
+    // canActivate:[GuardService]
   }
 ];
 
