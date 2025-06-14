@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Form other emergency</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="p-4 space-y-6 bg-white">
+
+  <!-- Deskripsi Kejadian -->
+  <div>
+    <h2 class="text-base font-bold">Deskripsi Kejadian</h2>
+
+    <label class="block text-sm font-medium mt-2 mb-1">jenis kejadian</label>
+    <ion-textarea placeholder="misalnya kebakaran atau ular masuk rumah" autoGrow="true"
+      class="bg-gray-100 rounded-xl p-3 text-sm text-gray-500 w-full"></ion-textarea>
+
+    <label class="block text-sm font-medium mt-4 mb-1">Awal mula kejadian</label>
+    <ion-textarea placeholder="Ceritakan awal mula" autoGrow="true"
+      class="bg-gray-100 rounded-xl p-3 text-sm text-gray-500 w-full"></ion-textarea>
+
+    <label class="block text-sm font-medium mt-4 mb-1">Situasi saat ini</label>
+    <ion-textarea placeholder="Ceritakan situasi saat ini" autoGrow="true"
+      class="bg-gray-100 rounded-xl p-3 text-sm text-gray-500 w-full"></ion-textarea>
+  </div>
+
+  <!-- Waktu Kejadian -->
+  <div>
+    <h2 class="text-base font-bold">Waktu Kejadian</h2>
+
+    <div class="flex items-center space-x-4 mt-2">
+      <label class="flex items-center space-x-2">
+        <ion-radio value="sekarang" slot="start"></ion-radio>
+        <span class="text-sm">sekarang</span>
+      </label>
+      <label class="flex items-center space-x-2">
+        <ion-radio value="tadi" slot="start" checked></ion-radio>
+        <span class="text-sm">tadi</span>
+      </label>
+    </div>
+
+    <ion-input placeholder="jam" class="bg-gray-100 rounded-xl p-3 text-sm text-gray-500 mt-2 w-full"></ion-input>
+  </div>
+
+  <!-- Korban Jiwa -->
+  <div>
+    <h2 class="text-base font-bold">Korban jiwa</h2>
+
+    <div class="flex items-center space-x-4 mt-2">
+      <label class="flex items-center space-x-2">
+        <ion-radio value="tidak ada" slot="start"></ion-radio>
+        <span class="text-sm">tidak ada</span>
+      </label>
+      <label class="flex items-center space-x-2">
+        <ion-radio value="ada" slot="start" checked></ion-radio>
+        <span class="text-sm">ada</span>
+      </label>
+    </div>
+
+    <ion-input class="bg-gray-100 rounded-xl p-3 text-sm text-gray-500 mt-2 w-full"></ion-input>
+  </div>
+
+  <!-- Upload Media -->
+  <div>
+    <h2 class="text-sm font-bold">Unggah media</h2>
+
+    <div class="flex space-x-4 mt-2">
+      <div class="w-1/2 h-28 border-2 border-dashed border-gray-400 flex items-center justify-center rounded-xl">
+        <ion-icon name="camera-outline" class="text-3xl text-gray-500"></ion-icon>
+      </div>
+      <div class="w-1/2 h-28 border-2 border-dashed border-gray-400 flex items-center justify-center rounded-xl">
+        <ion-icon name="image-outline" class="text-3xl text-gray-500"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Kirim -->
+  <div class="pt-2">
+    <ion-button expand="block" color="danger" class="rounded-full text-white text-base font-medium h-12">
+      Kirim laporan
+    </ion-button>
+  </div>
+
+</ion-content>

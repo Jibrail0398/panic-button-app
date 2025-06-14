@@ -1,0 +1,108 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>chat</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header class="shadow-md">
+  <ion-toolbar class="bg-white">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-black">Damkar Cikampek</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-[#f4f4f4]">
+  <!-- Date -->
+  <div class="flex justify-center my-2">
+    <span class="text-xs text-gray-500 px-3 py-1 rounded bg-gray-200">18/12/2023</span>
+  </div>
+
+  <!-- Incoming message -->
+  <div class="flex items-start mx-4 my-2">
+    <div class="bg-white rounded-xl px-4 py-2 max-w-[75%] shadow text-sm">
+      Halo! Terima kasih sudah menghubungi saya. Saya akan kesana?
+      <div class="text-[10px] text-right text-gray-400 mt-1">22:09</div>
+    </div>
+  </div>
+
+  <!-- Outgoing message -->
+  <div class="flex justify-end mx-4 my-2">
+    <div class="bg-reddamkar text-white rounded-xl px-4 py-2 max-w-[75%] text-sm">
+      Hai pak saya akan akan tunggu cepat ya pak api semakin membesar
+      <div class="text-[10px] text-right text-white mt-1">22:09</div>
+    </div>
+  </div>
+
+  <!-- Gambar -->
+  <div class="flex justify-end mx-4 my-2">
+    <div class="bg-reddamkar text-white rounded-xl p-2 max-w-[75%]">
+      <img src="https://via.placeholder.com/300x150" class="rounded-xl mb-1" />
+      <p class="text-sm">saya sudah mengatur prioritas sih kak</p>
+      <div class="text-[10px] text-white text-right mt-1">22:09</div>
+    </div>
+  </div>
+
+  <!-- Video preview -->
+  <div class="flex justify-end mx-4 my-2">
+    <div class="bg-reddamkar text-white rounded-xl p-2 max-w-[75%]">
+      <img src="https://via.placeholder.com/300x150" class="rounded-xl mb-1" />
+      <p class="text-sm">Benar juga ya, Kak...</p>
+      <div class="text-[10px] text-white text-right mt-1">22:09</div>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <div class="flex justify-end mx-4 my-2">
+    <div class="bg-reddamkar text-white rounded-xl p-2 max-w-[75%]">
+      <div class="flex items-center gap-2">
+        <ion-icon name="play-circle" class="text-white text-2xl"></ion-icon>
+        <span>35:50</span>
+      </div>
+      <div class="text-[10px] text-white text-right mt-1">22:09</div>
+    </div>
+  </div>
+
+  <!-- Lokasi -->
+  <div class="flex justify-start mx-4 my-2">
+    <div class="bg-white rounded-xl max-w-[75%] shadow">
+      <img src="https://via.placeholder.com/300x150" class="rounded-xl" />
+      <div class="text-[10px] text-gray-400 text-right pr-2 py-1">22:09</div>
+    </div>
+  </div>
+
+  <!-- Dokumen -->
+  <div class="flex justify-start mx-4 my-2">
+    <div class="bg-white rounded-xl px-4 py-2 max-w-[75%] shadow text-sm">
+      <div class="flex items-center gap-2">
+        <ion-icon name="document" class="text-xl text-red-500"></ion-icon>
+        <div>
+          <div class="font-semibold">Materi 5.pdf</div>
+          <div class="text-xs text-gray-500">352 KB</div>
+        </div>
+      </div>
+      <p class="mt-2">Terima kasih atas laporannya...</p>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-2">
+    <ion-textarea
+      class="flex-grow border border-gray-300 rounded-full px-4 py-2 text-sm"
+      placeholder="Ketik pesan"
+      autoGrow="true"
+    ></ion-textarea>
+    <ion-icon name="mic" class="text-2xl text-red-500"></ion-icon>
+  </div>
+</ion-content>
+
+<!-- <ion-footer class="p-2 bg-white">
+  <div class="flex items-center gap-2">
+    <ion-textarea
+      class="flex-grow border border-gray-300 rounded-full px-4 py-2 text-sm"
+      placeholder="Ketik pesan"
+      autoGrow="true"
+    ></ion-textarea>
+    <ion-icon name="mic" class="text-2xl text-red-500"></ion-icon>
+  </div>
+</ion-footer> -->

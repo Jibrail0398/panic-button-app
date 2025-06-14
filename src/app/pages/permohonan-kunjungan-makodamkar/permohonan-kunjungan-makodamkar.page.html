@@ -1,0 +1,91 @@
+<ion-header class="border-b border-gray-200">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="text-red-600">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="text-red-600 font-medium">Permintaan Kunjungan ke makodamkar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="p-4">
+  <!-- Prosedur Kunjungan Card -->
+  <div class="bg-white rounded-xl shadow-sm p-4 mb-6">
+    <div class="flex items-start mb-3">
+      <div class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 text-sm font-bold">
+        i
+      </div>
+      <h2 class="text-lg font-bold">Prosedur Kunjungan</h2>
+    </div>
+    
+    <ol class="list-decimal pl-6 text-gray-500">
+      <li class="mb-2">Mengisi formulir kunjungan minimal 3 hari sebelum tanggal kunjungan</li>
+      <li class="mb-2">Menunggu konfirmasi dari petugas melalui aplikasi</li>
+      <li class="mb-2">Membawa surat konfirmasi saat kunjungan</li>
+      <li class="mb-2">Mematuhi protokol keselamatan selama kunjungan</li>
+    </ol>
+  </div>
+
+  <!-- Detail Kunjungan Section -->
+  <h3 class="text-base font-bold mb-4">Detail Kunjungan</h3>
+  
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">Tanggal Kunjungan</ion-label>
+      <!-- <ion-datetime
+        presentation="date"
+        class="pt-1"
+        display-format="DD/MM/YYYY"
+        placeholder="Pilih tanggal">
+     </ion-datetime> -->
+    <ion-icon name="calendar-outline" slot="end" class="text-gray-400 text-xl"></ion-icon>
+  </ion-item>
+
+  <!-- <ion-item class="mb-4 rounded-lg">
+    <ion-label position="stacked" class="text-gray-700">Jumlah Peserta</ion-label>
+    <ion-input type="number" placeholder="" class="pt-1"></ion-input>
+  </ion-item> -->
+
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">Jumlah Peserta</ion-label>
+    <ion-textarea rows="1" autoGrow="false" class="pt-1"></ion-textarea>
+  </ion-item>
+  
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">Tujuan Kunjungan</ion-label>
+    <ion-textarea rows="4" placeholder="" class="pt-1"></ion-textarea>
+  </ion-item>
+
+  <!-- Informasi Penanggung Jawab Section -->
+  <h3 class="text-base font-bold mb-4">Informasi Penanggung Jawab</h3>
+  
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">Nama Pemohon</ion-label>
+    <ion-textarea rows="4" placeholder="" class="pt-1"></ion-textarea>
+  </ion-item>
+  
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">No Handhpne</ion-label>
+    <ion-textarea rows="4" placeholder="" class="pt-1"></ion-textarea>
+  </ion-item>
+  
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">Nama Instansi/sekolah/perusahaan</ion-label>
+    <ion-textarea rows="4" placeholder="" class="pt-1"></ion-textarea>
+  </ion-item>
+  
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">Jabatan Pemohon</ion-label>
+    <ion-textarea rows="1" autoGrow="false" class="pt-1"></ion-textarea>
+  </ion-item>
+  
+  <ion-item class="mb-6 rounded-lg bg-white border border-gray-300">
+    <ion-label position="stacked" class="text-gray-700">Alamat Instansi/sekolah/perusahaan</ion-label>
+    <ion-textarea rows="4" placeholder="" class="pt-1"></ion-textarea>
+  </ion-item>
+
+  <!-- Submit Button -->
+  <ion-button expand="block" class="bg-red-600 text-white mb-6 font-medium rounded-md">
+    Kirim
+  </ion-button>
+</ion-content>

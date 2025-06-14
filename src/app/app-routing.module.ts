@@ -45,6 +45,30 @@ const routes: Routes = [
     path: 'tips',
     loadChildren: () => import('./pages/tips/tips.module').then( m => m.TipsPageModule)
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'form-other-emergency',
+    loadChildren: () => import('./pages/form-other-emergency/form-other-emergency.module').then( m => m.FormOtherEmergencyPageModule)
+  },
+  {
+    path: 'notifikasi',
+    loadChildren: () => import('./pages/notifikasi/notifikasi.module').then( m => m.NotifikasiPageModule)
+  },
+  {
+    path: 'permohonan-kunjungan-makodamkar',
+    loadChildren: () => import('./pages/permohonan-kunjungan-makodamkar/permohonan-kunjungan-makodamkar.module').then( m => m.PermohonanKunjunganMakodamkarPageModule)
+  },
+  {
+    path: 'history',
+    loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
+  },
 
 ];
 
